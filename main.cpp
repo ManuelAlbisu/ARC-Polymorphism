@@ -1,4 +1,7 @@
 #include "Dog.h"
+#include "Cat.h"
+#include "Horse.h"
+#include "Pig.h"
 
 int main() {
     Dog doma;
@@ -8,11 +11,53 @@ int main() {
     Dog tiger(8, 100, Animal::BULLDOG);
     Animal someAnimal;
 
+    // Example of a polymorphic dog object
+    Animal *pDog = new Dog;
+
+    pDog->move();
+    pDog->speak();
+
+    // Another example of polymorphism
+    Animal *array[5];
+    Animal *ptr;
+    int choice, i;
+
+    for (i = 0; i < 5; i++) {
+        std::cout << "(1) dog (2) cat (3) horse (4) pig: ";
+        std::cin >> choice;
+
+        switch (choice) {
+        case 1:
+            ptr = new Dog;
+        case 2:
+            ptr = new Cat;
+        case 3:
+            ptr = new Horse;
+        case 4:
+            ptr = new Pig;
+        default:
+            ptr = new Animal;
+            break;
+        }
+
+        array[i] = ptr;
+    }
+
+    for (i = 0; i < 5; i++) {
+        array[i]->speak();
+    }
+
+    // Example of method overloading
     someAnimal.move(2);
-    doma.Animal::move(6);
-    doma.move();
-    someAnimal.speak();
+
+    // Examples of method overriding
     menchi.speak();
+    doma.move(); // Causes the move method to be hidden
+
+    // Example of child class using its base class's method
+    doma.Animal::move(6);
+
+    someAnimal.speak();
     rocky.wagTail();
 
     std::cout << "Doma is " << doma.getAge() << " years old." << std::endl;

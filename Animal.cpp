@@ -43,18 +43,24 @@ void Animal::setWeight(int newWeight) {
     int weight = newWeight;
 }
 
+// Base speak method
+// Due to the methods 'virtual' keyword, the compiler will invoke
+// the overridden method in the Dog class for a polymorphic object
 void Animal::speak() const {
     std::cout << "Animal sound!" << std::endl;
 }
 
+// Base sleep method
 void Animal::sleep() const {
     std::cout << "Shh. I'm sleeping" << std::endl;
 }
 
+// Base move method
 void Animal::move() const {
     std::cout << "Animal moves one step." << std::endl;
 }
 
+// Overloaded move method
 void Animal::move(int distance) const {
     std::cout << "Animal moves " << distance << " steps." << std::endl;
 }

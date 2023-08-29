@@ -17,7 +17,7 @@ public:
     void setWeight(int newWeight);
 
     // Additional methods
-    void speak() const;
+    virtual void speak() const;
     void sleep() const;
     void move() const;
     void move(int distance) const;

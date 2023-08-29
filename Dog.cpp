@@ -42,7 +42,7 @@ Dog::Dog(int age, BREED newBreed)
     // std::cout << "Dog(int, BREED) constructor..." << std::endl;
 }
 
-// Dog class destructor (child of Animal class)
+// Dog class destructor
 Dog::~Dog() {
     // std::cout << "Dog destructor..." << std::endl;
 }
@@ -57,18 +57,22 @@ void Dog::setBreed(BREED newBreed) {
     BREED breed = newBreed;
 }
 
+// wag tail method for Dog class
 void Dog::wagTail() {
     std::cout << "Tail wagging..." << std::endl;
 }
 
+// Beg for food method for Dog class
 void Dog::begForFood() {
     std::cout << "Begging for food..." << std::endl;
 }
 
+// Dog class's speak method override
 void Dog::speak() const {
     std::cout << "Woof!" << std::endl;
 }
 
+// Dog class's move method override (Hides move method)
 void Dog::move() const {
     std::cout << "Dog moves..." << std::endl;
     Animal::move(3);
