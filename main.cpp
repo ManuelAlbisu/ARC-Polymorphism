@@ -29,12 +29,16 @@ int main() {
         switch (choice) {
         case 1:
             ptr = new Dog;
+            break;
         case 2:
             ptr = new Cat;
+            break;
         case 3:
             ptr = new Horse;
+            break;
         case 4:
             ptr = new Pig;
+            break;
         default:
             ptr = new Animal;
             break;
@@ -48,20 +52,20 @@ int main() {
     }
 
     // Example of method overloading
-    someAnimal.move(2);
+    // someAnimal.move(2);
 
     // Examples of method overriding
-    menchi.speak();
-    doma.move(); // Causes the move method to be hidden
+    // menchi.speak();
+    // doma.move(); // Causes the move method to be hidden
 
     // Example of child class using its base class's method
-    doma.Animal::move(6);
+    // doma.Animal::move(6);
 
-    someAnimal.speak();
-    rocky.wagTail();
+    // someAnimal.speak();
+    // rocky.wagTail();
 
-    std::cout << "Doma is " << doma.getAge() << " years old." << std::endl;
-    std::cout << "Tiger weighs " << tiger.getWeight() << " pounds." << std::endl;
+    // std::cout << "Doma is " << doma.getAge() << " years old." << std::endl;
+    // std::cout << "Tiger weighs " << tiger.getWeight() << " pounds." << std::endl;
 
     return 0;
 }
