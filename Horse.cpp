@@ -4,6 +4,13 @@
 Horse::Horse() : Animal() {
     
 }
+
+// Horse class copy constructor
+Horse::Horse(const Horse &rhs)
+    : Animal(rhs)
+{
+    std::cout << "Horse copy constructor..." << std::endl;
+}
         
 // Horse class destructor
 Horse::~Horse() {
@@ -14,3 +21,8 @@ Horse::~Horse() {
 void Horse::speak() const {
     std::cout << "Neigh!" << std::endl;
 }
+
+Animal* clone() {
+    return new Horse(*this);
+}
+

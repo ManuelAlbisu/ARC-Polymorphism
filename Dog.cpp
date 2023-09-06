@@ -42,6 +42,13 @@ Dog::Dog(int age, BREED newBreed)
     // std::cout << "Dog(int, BREED) constructor..." << std::endl;
 }
 
+// Dog class copy constructor
+Dog::Dog(const Dog &rhs)
+    : Animal(rhs)
+{
+    std::cout << "Dog copy constructor..." << std::endl;
+}
+
 // Dog class destructor
 Dog::~Dog() {
     // std::cout << "Dog destructor..." << std::endl;
@@ -70,6 +77,11 @@ void Dog::begForFood() {
 // Dog class's speak method override
 void Dog::speak() const {
     std::cout << "Woof!" << std::endl;
+}
+
+// Dog class's virtual clone member function
+Animal* clone() {
+    return new Dog(*this);
 }
 
 // Dog class's move method override (Hides move method)

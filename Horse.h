@@ -7,10 +7,12 @@ class Horse : public Animal {
  public:
     // Constructors
     Horse();
-    ~Horse();
+    Horse(const Horse &rhs);
+    virtual ~Horse();
 
     // Additional methods
     void speak() const;
+    virtual Animal* clone();
 };
 
 #endif // CAT_H

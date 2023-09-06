@@ -18,6 +18,13 @@ Animal::Animal(int age)
     // std::cout << "Animal(int) constructor..." << std::endl;
 }
 
+// Animal class copy constructor
+Animal::Animal(const Animal &rhs)
+    :age(rhs.getAge())
+{
+    std::cout << "Animal copy constructor..." << std::endl;
+}
+
 // Animal class destructor (parent class)
 Animal::~Animal() {
     // std::cout << "Animal destructor..." << std::endl;
@@ -48,6 +55,11 @@ void Animal::setWeight(int newWeight) {
 // the overridden method in the Dog class for a polymorphic object
 void Animal::speak() const {
     std::cout << "Animal sound!" << std::endl;
+}
+
+// Animal class's virtual clone member function
+Animal* clone() {
+    return new Animal(*this);
 }
 
 // Base sleep method

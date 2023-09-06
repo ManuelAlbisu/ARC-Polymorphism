@@ -7,10 +7,12 @@ class Cat : public Animal {
  public:
     // Constructors
     Cat();
-    ~Cat();
+    Cat(const Cat &rhs);
+    virtual ~Cat();
 
     // Additional methods
     void speak() const;
+    virtual Animal* clone();
 };
 
 #endif // CAT_H

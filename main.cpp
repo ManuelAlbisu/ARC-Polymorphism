@@ -4,18 +4,18 @@
 #include "Pig.h"
 
 int main() {
-    Dog doma;
-    Dog menchi(7);
-    Dog oscar(10, 8);
-    Dog rocky(15, Animal::MUTT);
-    Dog tiger(8, 100, Animal::BULLDOG);
-    Animal someAnimal;
+    // Dog doma;
+    // Dog menchi(7);
+    // Dog oscar(10, 8);
+    // Dog rocky(15, Animal::MUTT);
+    // Dog tiger(8, 100, Animal::BULLDOG);
+    // Animal someAnimal;
 
     // Example of a polymorphic dog object
-    Animal *pDog = new Dog;
+    // Animal *pDog = new Dog;
 
-    pDog->move();
-    pDog->speak();
+    // pDog->move();
+    // pDog->speak();
 
     // Another example of polymorphism
     Animal *array[5];

@@ -8,7 +8,8 @@ public:
     // Constructors
     Animal();
     Animal(int age);
-    ~Animal();
+    Animal(const Animal &rhs);
+    virtual ~Animal();
 
     // Accessors
     int getAge() const;
@@ -18,6 +19,7 @@ public:
 
     // Additional methods
     virtual void speak() const;
+    virtual Animal* clone();
     void sleep() const;
     void move() const;
     void move(int distance) const;

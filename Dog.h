@@ -11,7 +11,8 @@ public:
     Dog(int age, int weight);
     Dog(int age, BREED breed);
     Dog(int age, int weight, BREED breed);
-    ~Dog();
+    Dog(const Dog &rhs);
+    virtual ~Dog();
 
     // Accessors
     BREED getBreed() const;
@@ -21,6 +22,7 @@ public:
     void wagTail();
     void begForFood();
     void speak() const;
+    virtual Animal* clone();
     void move() const;
 
 private:
