@@ -2,7 +2,7 @@
 
 // Cat class constructor (child of Animal class)
 Cat::Cat() : Animal() {
-    
+    std::cout << "Cat constructor..." << std::endl;
 }
 
 // Cat class copy constructor
@@ -14,16 +14,16 @@ Cat::Cat(const Cat &rhs)
 
 // Cat class destructor
 Cat::~Cat() {
-    
+    std::cout << "Cat destructor..." << std::endl;
+}
+
+// Cat class's virtual clone member function
+Animal* Cat::clone() {
+    return new Cat(*this);
 }
 
 // Cat class's speak method override
 void Cat::speak() const {
     std::cout << "Meow!" << std::endl;
-}
-
-// Cat class's virtual clone member function
-Animal* clone() {
-    return new Cat(*this);
 }
 

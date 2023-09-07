@@ -8,7 +8,7 @@ class Horse : public Animal {
     // Constructors
     Horse();
     Horse(const Horse &rhs);
-    virtual ~Horse();
+    virtual ~Horse(); // Ensures to invoke actual object destructor
 
     // Additional methods
     void speak() const;

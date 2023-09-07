@@ -8,7 +8,7 @@ class Pig : public Animal {
     // Constructors
     Pig();
     Pig(const Pig &rhs);
-    virtual ~Pig();
+    virtual ~Pig(); // Ensures to invoke actual object destructor
 
     // Additional methods
     void speak() const;

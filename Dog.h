@@ -12,7 +12,7 @@ public:
     Dog(int age, BREED breed);
     Dog(int age, int weight, BREED breed);
     Dog(const Dog &rhs);
-    virtual ~Dog();
+    virtual ~Dog(); // Ensures to invoke actual object destructor
 
     // Accessors
     BREED getBreed() const;

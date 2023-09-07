@@ -5,7 +5,7 @@ Dog::Dog()
     : Animal()
     , breed(ROTTWEILER)
 {
-    // std::cout << "Dog constructor..." << std::endl;
+    std::cout << "Dog constructor..." << std::endl;
 }
 
 // Dog class constructor (int overload)
@@ -13,7 +13,7 @@ Dog::Dog(int age)
     : Animal(age)
     , breed(ROTTWEILER)
 {
-    // std::cout << "Dog(int) constructor..." << std::endl;
+    std::cout << "Dog(int) constructor..." << std::endl;
 }
 
 // Dog class constructor (int, int overload)
@@ -22,7 +22,7 @@ Dog::Dog(int age, int newWeight)
     , breed(ROTTWEILER)
 {
     weight = newWeight;
-    // std::cout << "Dog(int, int) constructor..." << std::endl;
+    std::cout << "Dog(int, int) constructor..." << std::endl;
 }
 
 // Dog class constructor (int, int, BREED overload)
@@ -31,7 +31,7 @@ Dog::Dog(int age, int newWeight, BREED breed)
     , breed(breed)
 {
     weight = newWeight;
-    // std::cout << "Dog(int, int, BREED) constructor..." << std::endl;
+    std::cout << "Dog(int, int, BREED) constructor..." << std::endl;
 }
 
 // Dog class constructor (int, BREED overload)
@@ -39,7 +39,7 @@ Dog::Dog(int age, BREED newBreed)
     : Animal(age)
     , breed(newBreed)
 {
-    // std::cout << "Dog(int, BREED) constructor..." << std::endl;
+    std::cout << "Dog(int, BREED) constructor..." << std::endl;
 }
 
 // Dog class copy constructor
@@ -51,7 +51,7 @@ Dog::Dog(const Dog &rhs)
 
 // Dog class destructor
 Dog::~Dog() {
-    // std::cout << "Dog destructor..." << std::endl;
+    std::cout << "Dog destructor..." << std::endl;
 }
 
 // Gets breed of the dog object
@@ -62,6 +62,11 @@ Animal::BREED Dog::getBreed() const {
 // Sets a new breed for the dog object
 void Dog::setBreed(BREED newBreed) {
     BREED breed = newBreed;
+}
+
+// Dog class's virtual clone member function
+Animal* Dog::clone() {
+    return new Dog(*this);
 }
 
 // wag tail method for Dog class
@@ -77,11 +82,6 @@ void Dog::begForFood() {
 // Dog class's speak method override
 void Dog::speak() const {
     std::cout << "Woof!" << std::endl;
-}
-
-// Dog class's virtual clone member function
-Animal* clone() {
-    return new Dog(*this);
 }
 
 // Dog class's move method override (Hides move method)

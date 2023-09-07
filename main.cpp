@@ -18,11 +18,12 @@ int main() {
     // pDog->speak();
 
     // Another example of polymorphism
+    const int numOfAnimals = 5;
     Animal *array[5];
     Animal *ptr;
     int choice, i;
 
-    for (i = 0; i < 5; i++) {
+    for (i = 0; i < numOfAnimals; ++i) {
         std::cout << "(1) dog (2) cat (3) horse (4) pig: ";
         std::cin >> choice;
 
@@ -47,8 +48,18 @@ int main() {
         array[i] = ptr;
     }
 
-    for (i = 0; i < 5; i++) {
+    // Invoke the speak method and creates a clone of the array
+    Animal *cloneArray[numOfAnimals];
+    for (i = 0; i < numOfAnimals; ++i) {
         array[i]->speak();
+        cloneArray[i] = array[i]->clone();
+    }
+
+    std::cout << "\nOutput of copy\n" << std::endl;
+
+    // Calls the speak method from the clone array
+    for (i = 0; i < numOfAnimals; ++i) {
+        cloneArray[i]->speak();
     }
 
     // Example of method overloading

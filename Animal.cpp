@@ -7,7 +7,7 @@ Animal::Animal()
     : age(4)
     , weight(90)
 {
-    // std::cout << "Animal constructor..." << std::endl;
+    std::cout << "Animal constructor..." << std::endl;
 }
 
 // Animal class constructor (int overload)
@@ -15,7 +15,7 @@ Animal::Animal(int age)
     : age(age)
     , weight(5)
 {
-    // std::cout << "Animal(int) constructor..." << std::endl;
+    std::cout << "Animal(int) constructor..." << std::endl;
 }
 
 // Animal class copy constructor
@@ -27,7 +27,7 @@ Animal::Animal(const Animal &rhs)
 
 // Animal class destructor (parent class)
 Animal::~Animal() {
-    // std::cout << "Animal destructor..." << std::endl;
+    std::cout << "Animal destructor..." << std::endl;
 }
 
 // Gets the age of the Animal object
@@ -50,16 +50,18 @@ void Animal::setWeight(int newWeight) {
     int weight = newWeight;
 }
 
+// Animal class's virtual clone member function
+// Call with scope operator since it is not
+// a member of an instance of a class.
+Animal* Animal::clone() {
+    return new Animal(*this);
+}
+
 // Base speak method
 // Due to the methods 'virtual' keyword, the compiler will invoke
 // the overridden method in the Dog class for a polymorphic object
 void Animal::speak() const {
     std::cout << "Animal sound!" << std::endl;
-}
-
-// Animal class's virtual clone member function
-Animal* clone() {
-    return new Animal(*this);
 }
 
 // Base sleep method

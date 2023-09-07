@@ -9,7 +9,7 @@ public:
     Animal();
     Animal(int age);
     Animal(const Animal &rhs);
-    virtual ~Animal();
+    virtual ~Animal(); // Ensures to invoke actual object destructor
 
     // Accessors
     int getAge() const;

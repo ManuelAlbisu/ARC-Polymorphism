@@ -8,7 +8,7 @@ class Cat : public Animal {
     // Constructors
     Cat();
     Cat(const Cat &rhs);
-    virtual ~Cat();
+    virtual ~Cat(); // Ensures to invoke actual object destructor
 
     // Additional methods
     void speak() const;
