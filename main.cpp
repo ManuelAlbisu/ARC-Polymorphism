@@ -83,35 +83,80 @@ int main() {
     // std::cout << "Doma is " << doma.getAge() << " years old." << std::endl;
     // std::cout << "Tiger weighs " << tiger.getWeight() << " pounds." << std::endl;
 
-    // Example of doubly linked list
+    // Example of doubly linked list (self-implemented)
     // LinkedList* list = new LinkedList();
     // list->pushHead(NULL, 10);
     // std::cout << list << std::endl;
 
-    // doubly linked list example
-    std::list<int> list = { 1, 2, 3, 4, 5 };
-    list.push_front(5);
-    list.push_back(1);
+    // doubly linked list example (list library)
+    // std::list<int> list = { 1, 2, 3, 4, 5 };
+    // list.push_front(5);
+    // list.push_back(1);
 
-    auto iterator = std::find(list.begin(), list.end(), 3);
-    if (iterator != list.end())
-        list.insert(iterator, 6);
+    // auto iterator = std::find(list.begin(), list.end(), 3);
+    // if (iterator != list.end())
+    //     list.insert(iterator, 6);
  
-    for (int i : list)
-        std::cout << i << std::endl;
+    // for (int i : list)
+    //     std::cout << i << std::endl;
 
-    // vector example
-    std::vector<int> vector = { 7, 8, 9, 10};
+    // vector example (vector library)
+    // std::vector<int> vector = { 7, 8, 9, 10};
  
-    vector.push_back(11);
-    vector.push_back(12);
+    // vector.push_back(11);
+    // vector.push_back(12);
  
-    vector[2] = 100;
+    // vector[2] = 100;
  
-    for (int i : vector)
-        std::cout << i << ' ';
+    // for (int i : vector)
+    //     std::cout << i << ' ';
 
-    std::cout << '\n';
+    // std::cout << '\n';
+
+    // Animal polymorphic vector example
+    std::vector<Animal*> animalVector;
+    Animal *ptr;
+    int choice, selection, i;
+
+    std::cout << "How many animals in the farm?" << "\nInput an integer." << std::endl;
+    std::cin >> choice;
+
+    int numOfAnimals = choice;
+    for (i = 0; i < numOfAnimals; i++) {
+        std::cout << "(1) Dog (2) Cat (3) Horse (4) Pig: ";
+        std::cin >> selection;
+
+        switch (selection) {
+        case 1:
+            ptr = new Dog;
+            break;
+        case 2:
+            ptr = new Cat;
+            break;
+        case 3:
+            ptr = new Horse;
+            break;
+        case 4:
+            ptr = new Pig;
+            break;
+        default:
+            ptr = new Animal;
+            break;
+        }
+
+        animalVector.push_back(ptr);
+    }
+
+    std::vector<Animal*> animalCloneVector;
+    for (i = 0; i < animalVector.size(); ++i) {
+        animalVector.at(i)->speak();
+        animalCloneVector.push_back(animalVector.at(i)->clone());
+    }
+
+    std::cout << "\nOutput of copy\n" << std::endl;
+
+    for (i = 0; i < animalVector.size(); ++i) 
+        animalCloneVector.at(i)->speak();
 
     return 0;
 }
